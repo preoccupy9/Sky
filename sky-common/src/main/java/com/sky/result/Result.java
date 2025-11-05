@@ -15,6 +15,12 @@ public class Result<T> implements Serializable {
     private String msg; //错误信息
     private T data; //数据
 
+//    public Result(Integer code, String msg, T data) {
+//        this.code = code;
+//        this.msg = msg;
+//        this.data = data;
+//    }
+
     public static <T> Result<T> success(T data, String msg) {
         Result<T> result = new Result<T>();
         result.code = 1;
@@ -30,6 +36,13 @@ public class Result<T> implements Serializable {
         return result;
     }
 
+//    public static <T> Result<T> success(){
+//        Result<T> result = new Result<T>();
+//        result.code = 1;
+//        result.msg= msg;
+//        result.data=data;
+//        return result;
+//    }
     public static <T> Result<T> error(String msg) {
         Result result = new Result();
         result.msg = msg;
